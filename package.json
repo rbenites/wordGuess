@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rbenites/wordGuess/issues"
   },
-  "homepage": "https://github.com/rbenites/wordGuess#readme"
+  "homepage": "https://github.com/rbenites/wordGuess#readme",
+  "dependencies": {
+    "inquirer": "^5.2.0"
+  }
 }
