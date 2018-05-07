@@ -1,6 +1,6 @@
 # Advanced JavaScript Assignment: Constructor Word Guess
 
-### Overview
+## Overview
 
 This homework assignment is **optional**.
 
