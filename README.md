@@ -42,7 +42,7 @@ NPM will be required so make sure you do an npm install.
 2. This also holds a charcter check to validate if the letter guessed is the same as a letter in stringLetter
 3. Exports the Letter module.
 
-####### Words.js
+###### Words.js
 
 1. Requires Letter.js.
 2. This contains the logic for holding the random word.
