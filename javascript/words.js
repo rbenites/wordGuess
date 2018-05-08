@@ -6,23 +6,28 @@
 
 //====file import====//
 var letterImport = require("./Letter.js");
-
+//save data from Letter Obj constructor in Letter.js into Letter var
 var Letter = letterImport.Letter;
 
+//object constructor
 function Word(word) {
     this.letterArr = [];
+    //splits the random word and stores each letter in the letterArr aray
     for (var i = 0; i < word.split("").length; i++) {
         var newLetter = new Letter(word[i]);
         this.letterArr.push(newLetter);
     }
+
     this.string = function () {
         var wordString = [];
+        //for loop to iterate through letterArr aray
         for (var i = 0; i < this.letterArr.length; i++) {
             wordString.push(this.letterArr[i].letterGuessed());
         }
         return wordString.join("");
     };
     this.guess = function (keyChar) {
+        //for loop to iterate through letterArr aray and takes the users input calling to inputChar in Letter.js
         for (var i = 0; i < this.letterArr.length; i++) {
             this.letterArr[i].inputChar(keyChar);
         }

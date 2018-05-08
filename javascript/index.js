@@ -7,7 +7,7 @@
 var randomWords = require("random-words");
 var inquirer = require("inquirer");
 //====file import====//
-var wordImport = require("./words.js");
+var wordImport = require("./Words.js");
 
 //store import from Word.js
 var Word = wordImport.Word;
@@ -35,7 +35,6 @@ function playGame() {
             {
                 name: "letter",
                 message: "Guess a letter. You have " + remainingGuesses + " guesses left."
-
             }
             //once the letter is typed the .then stores the guess, reduces guesses by 1 and then calls the checker function
         ]).then(function (answers) {
@@ -46,12 +45,12 @@ function playGame() {
         });
         //else if the guesses remaining are less than or equal to 0 display the word that was to be guessed and then calls the function to restart the game if the user wants
     } else {
-        var wordDisplay = [];
+        var showWord = [];
         for (var i = 0; i < wordToGuess.letterArr.length; i++) {
-            wordDisplay.push(wordToGuess.letterArr[i].stringLetter);
+            showWord.push(wordToGuess.letterArr[i].stringLetter);
         }
         console.log("You lose!");
-        console.log("\nThe word you missed was: " + wordDisplay.join("") + "\n");
+        console.log("\nThe word you missed was: " + showWord.join("") + "\n");
         restart();
     }
 }
