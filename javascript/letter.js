@@ -11,4 +11,34 @@
         - A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
 */
 
+//object constructor
+function Letter(stringLetter) {
+    this.stringLetter = stringLetter;
+    this.guessed = false;
+    //method for adding dashes if letter is not guessed and there is no space
+    this.letterGuessed = function () {
+        if (this.guessed === false && this.stringLetter != " ") {
+            return " _ ";
+            //adds blanks/spaces
+        } else if (this.guessed === false && this.stringLetter === " ") {
+            return "   ";
+            //adds a space
+        } else {
+            return " " + this.stringLetter + " ";
+        }
+    };
+    //method to check if the guessed letter is correct
+    this.inputChar = function (character) {
+        if (character === this.stringLetter) {
+            this.guessed = true;
+            return true;
+        } else {
+            return false;
+        }
+    };
+}
+
+module.exports = {
+    Letter: Letter
+};
 
